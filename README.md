@@ -16,23 +16,25 @@ Things you may want to cover:
 ## users_table
 |Column|Type|Options|
 |------|----|-------|
-|name|string|null: false, unique:true|
-|password|integer|null: false, unique:true|
-|timestamp|timestamp|null: false|
+|name|string|null: false, unique:true, add_index :users, :name|
+|email|string|null: false, unique:true|
+|password|string|null: false|
 
 ### Association
-- has_many :groups through users_groups_relations
+- has_many :groups, through: :users_groups_relations
 - has_many :users_groups_relations
+- has_many :messages
+
 
 ## groups_table
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null: false, unique:true|
-|timestamp|timestamp|null: false|
 
 ### Association
-- has_many :users through users_groups_relations
+- has_many :users through: :users_groups_relations
 - has_many :users_groups_relations
+- has_many :messages
 
 
 ## users_groups_relation_table
@@ -40,7 +42,6 @@ Things you may want to cover:
 |------|----|-------|
 |user_id|integer|null: false ,foreign_key:true|
 |group_id|integer|null: false, foreign_key:true|
-|timestamp|timestamp|null: false|
 
 belongs_to :user
 belongs_to :group
@@ -53,7 +54,6 @@ belongs_to :group
 |group_id|integer|null: false, foreign_key:true|
 |text|text|null: false|
 |image|text| |
-|timestamp|timestamp|null: false|
 
 belongs_to :user
 belongs_to :group
