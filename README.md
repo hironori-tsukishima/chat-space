@@ -13,10 +13,21 @@ Things you may want to cover:
 
 * Database creation
 
+## users_groups_relation_table
+|Column|Type|Options|
+|------|----|-------|
+|user_id|references|null: false ,foreign_key:true|
+|group_id|references|null: false, foreign_key:true|
+
+### Association
+belongs_to :user
+belongs_to :group
+
+
 ## users_table
 |Column|Type|Options|
 |------|----|-------|
-|name|string|null: false, unique:true, add_index :users, :name|
+|name|string|null: false, unique:true, index: true|
 |email|string|null: false, unique:true|
 |password|string|null: false|
 
@@ -37,24 +48,15 @@ Things you may want to cover:
 - has_many :messages
 
 
-## users_groups_relation_table
-|Column|Type|Options|
-|------|----|-------|
-|user_id|integer|null: false ,foreign_key:true|
-|group_id|integer|null: false, foreign_key:true|
-
-belongs_to :user
-belongs_to :group
-
-
 ## messages_table
 |Column|Type|Options|
 |------|----|-------|
 |user_id|integer|null: false ,foreign_key:true|
 |group_id|integer|null: false, foreign_key:true|
-|text|text|null: false|
+|text|text| |
 |image|text| |
 
+### Association
 belongs_to :user
 belongs_to :group
 
