@@ -35,7 +35,7 @@ Things you may want to cover:
 - has_many :users_groups_relations
 
 
-## users_groups_relational_table
+## users_groups_relation_table
 |Column|Type|Options|
 |------|----|-------|
 |user_id|integer|null: false ,foreign_key:true|
