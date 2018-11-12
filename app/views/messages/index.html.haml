@@ -1,1 +1,22 @@
-.
+.notification
+.chat-side
+  .chat-side__user
+  .chat-side__groups__list
+    .chat-side__group-name
+    .chat-side__group-message
+.chat-main
+  .chat-main__header
+    .chat-main__header-name
+    %a.chat-main__header__edit-button
+    .chat-main__header-members
+  .chat-main__body
+    .chat-main__body__message-list
+      .chat-main__body__message-name
+      .chat-main__body__message-time
+      .chat-main__body__message-body
+  .chat-main__footer
+    .chat-main__footer__body
+      %input#message-body.message{placeholder: "type a message" , type: "text" , name: "message"}
+      %label.chat-file
+        %input#image.image{type: "file" , name: "message-imaage"}
+      %input.submit{type: "submit" , name: "commit" , value:"send" , "data-basable-with"=>"send"}
