@@ -1,0 +1,25 @@
+.notification チャットグループが作成されました
+.chat-side
+  .chat-side__user
+    .chat-side__user__name 高田延彦
+    = fa_icon 'pencil-square lg', class: 'icon_edit' , href: ""
+    = fa_icon 'cog lg', class: 'icon_cog', href:""
+  .chat-side__group
+    .chat-side__group__name たけし軍団
+    .chat-side__group__message なんだこのやろー
+.chat-main
+  .chat-main__header
+    .chat-main__header__name たけし軍団
+    %a.chat-main__header__edit-button Edit
+    .chat-main__header__members 高田延彦、クリス松村
+  .chat-main__body
+    .chat-main__body__message-name 高田延彦
+    .chat-main__body__message-time 2018/08/08 12:59
+    .chat-main__body__message-body なんだこのやろー
+  .chat-main__footer
+    %input#message-body.message{placeholder: "type a message" , type: "text" , name: "message"}
+
+    %label{for: "file"}
+      = fa_icon "file-picture-o lg" , class: "icon"
+      %input#file{type: "file"}
+    %input.submit{type: "submit" , name: "commit" , value:"send" , "data-basable-with"=>"send"}
