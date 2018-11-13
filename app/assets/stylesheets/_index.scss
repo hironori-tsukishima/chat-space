@@ -13,29 +13,23 @@
   background-color:#2f3e51;
   float:left;
   &__user{
-   @include user();
+    height:100px;
+    background-color:#253141;
+    padding:0px 20px;
+    border-bottom:solid 1px #eeeeee ;
     &__name{
       @include name();
     }
-  }
     .icon_edit{
       color:white;
-      position: absolute;
-      top: 10%;
-      left:15%;
-      -ms-transform: translateY(-50%);
-      -webkit-transform : translateY(-50%);
-      transform : translateY(-50%);;
+      padding-left:65%;
+      padding-right:10px;
     }
     .icon_cog{
       color:white;
-      position: absolute;
-      top: 10%;
-      left:17%;
-      -ms-transform: translateY(-50%);
-      -webkit-transform : translateY(-50%);
-      transform : translateY(-50%);;
+
     }
+  }
 
   &__group{
     height:105px;
