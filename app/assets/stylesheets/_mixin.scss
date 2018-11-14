@@ -1,14 +1,17 @@
 @mixin user(){
-    height:100px;
-    background-color:#253141;
-    padding:0px 20px;
-    border-bottom:solid 1px #eeeeee ;
-  }
-  @mixin name{
-      color:white;
-      font-size: 16px;
-      font-weight: bold;
-      vertical-align:middle;
-      line-height: 100px;
-    }
-
+  height:100px;
+  background-color:#253141;
+  padding:0px 20px;
+  border-bottom:solid 1px #eeeeee ;
+}
+@mixin name{
+  color:white;
+  font-size: 16px;
+  font-weight: bold;
+  vertical-align:middle;
+  line-height: 100px;
+}
+@mixin flexbox {
+  display: flex;
+  flex-direction: row;
+}
