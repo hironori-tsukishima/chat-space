@@ -87,6 +87,7 @@
     background-color: #FAFAFA;
     height: calc(100vh - 100px - 90px);
     padding:0px 40px;
+    overflow: scroll;
     &__message-name{
       color:#333333;
       padding:46px 10px 0px 0px;
@@ -110,7 +111,7 @@
     background-color: #AAAAAA;
     width: calc(100vw - 300px);
     padding:0px 40px;
-    #message-body{
+    .message{
       width: calc(100vw - 490px);
       padding:0px 10px;
       height:50px;
@@ -129,7 +130,7 @@
       transform : translateY(-50%);;
 
     }
-    #file{
+    .hidden{
         display:none;
         cursor:pointer;
       }
