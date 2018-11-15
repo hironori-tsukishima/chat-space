@@ -1,43 +1,37 @@
-.notification{
-  height:28px;
-  width:100%;
-  background-color:#2E9AFE;
-  color:white;
-  text-align: center;
-  vertical-align:middle;
-  line-height: 28px;
-}
+// .notification{
+//   height:28px;
+//   width:100%;
+//   background-color:#2E9AFE;
+//   color:white;
+//   text-align: center;
+//   vertical-align:middle;
+//   line-height: 28px;
+// }
 .chat-side{
   height:100vh;
   width: 300px;
   background-color:#2f3e51;
   float:left;
   &__user{
-   @include user();
+    height:100px;
+    background-color:#253141;
+    padding:0px 20px;
+    border-bottom:solid 1px #eeeeee ;
     &__name{
       @include name();
     }
-  }
     .icon_edit{
       color:white;
-      position: absolute;
-      top: 10%;
-      left:15%;
-      -ms-transform: translateY(-50%);
-      -webkit-transform : translateY(-50%);
-      transform : translateY(-50%);;
+      padding-left:30%;
+      padding-right:10px;
     }
     .icon_cog{
       color:white;
-      position: absolute;
-      top: 10%;
-      left:17%;
-      -ms-transform: translateY(-50%);
-      -webkit-transform : translateY(-50%);
-      transform : translateY(-50%);;
-    }
 
-  &__group{
+    }
+  }
+
+  &__groups{
     height:105px;
     padding:0px 20px;
     &__name{
