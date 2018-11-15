@@ -1,18 +1,23 @@
+= render partial: 'layouts/side_bar'
 .chat-main
   .chat-main__header
     .chat-main__header__name
+      = @group.name
     %a.chat-main__header__edit-button Edit
     .chat-main__header__members
       = current_user.name
   .chat-main__body
-    .chat-main__body__message-name
-      = current_user.name
-    .chat-main__body__message-time 2018/08/08 12:59
-    .chat-main__body__message-body なんだこのやろー
+    - @messages.each do |message|
+      .chat-main__body__message-name
+        = current_user.name
+      .chat-main__body__message-time
+        =message.created_at
+      .chat-main__body__message-body
+        =message.text
   .chat-main__footer
-    %input#message-body.message{placeholder: "type a message" , type: "text" , name: "message"}
-
-    %label{for: "file"}
-      = fa_icon "file-picture-o lg" , class: "icon"
-      %input#file{type: "file"}
-    %input.submit{type: "submit" , name: "commit" , value:"send" , "data-basable-with"=>"send"}
+    = form_for [@group, @message] do |f|
+      = f.text_field :text , placeholder: "type a message", class: "message"
+      = f.label :image do
+        = fa_icon "file-picture-o lg" , class: "icon"
+        = f.file_field :image, class: "hidden"
+      = f.submit "send" , class: "submit"
