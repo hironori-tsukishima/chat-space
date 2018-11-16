@@ -1,29 +1,25 @@
-.chat-side
-  .chat-side__user
-    .chat-side__user__name
-      =current_user.name
-      =link_to new_group_path do
-        = fa_icon 'pencil-square lg', class: 'icon_edit'
-      =link_to edit_user_path(current_user) do
-        = fa_icon 'cog lg', class: 'icon_cog'
-  .chat-side__group
-    .chat-side__group__name
-    .chat-side__group__message なんだこのやろー
+= render partial: 'layouts/side_bar'
 .chat-main
   .chat-main__header
     .chat-main__header__name
-    %a.chat-main__header__edit-button Edit
+      = @group.name
+    .chat-main__header__edit-button
+      %label.edit
+        =link_to "Edit", edit_group_path(@group)
     .chat-main__header__members
       = current_user.name
   .chat-main__body
-    .chat-main__body__message-name
-      = current_user.name
-    .chat-main__body__message-time 2018/08/08 12:59
-    .chat-main__body__message-body なんだこのやろー
+    - @messages.each do |message|
+      .chat-main__body__message-name
+        = current_user.name
+      .chat-main__body__message-time
+        =message.created_at
+      .chat-main__body__message-body
+        =message.text
   .chat-main__footer
-    %input#message-body.message{placeholder: "type a message" , type: "text" , name: "message"}
-
-    %label{for: "file"}
-      = fa_icon "file-picture-o lg" , class: "icon"
-      %input#file{type: "file"}
-    %input.submit{type: "submit" , name: "commit" , value:"send" , "data-basable-with"=>"send"}
+    = form_for [@group, @message] do |f|
+      = f.text_field :text , placeholder: "type a message", class: "message"
+      = f.label :image do
+        = fa_icon "file-picture-o lg" , class: "icon"
+        = f.file_field :image, class: "hidden"
+      = f.submit "send" , class: "submit"

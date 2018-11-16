@@ -61,3 +61,6 @@ gem 'erb2haml'
 gem "font-awesome-rails"
 
 gem "devise"
+# for uploading image
+gem 'carrierwave'
+gem 'mini_magick'

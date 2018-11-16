@@ -1,0 +1,7 @@
+ <%= form_tag words_path, method: :create,:multipart => true do %>
+        <%= fields_for "words[]", @words ,index:nil do |f| %>
+            <%= f.label :image,"ホーム画像" %>
+            <%= f.file_field :image,class: 'form_control'%>
+        <%= submit_tag '完了',class: "btn btn-primary"  %>
+        <%end%>
+      <% end %>
