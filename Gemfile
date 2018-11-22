@@ -39,6 +39,9 @@ group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
   gem 'pry-rails'
+  gem 'rspec-rails'
+  gem 'factory_girl_rails', "~> 4.4.1"
+  gem 'rails-controller-testing'
 end
 
 group :development do
@@ -64,3 +67,7 @@ gem "devise"
 # for uploading image
 gem 'carrierwave'
 gem 'mini_magick'
+
+group :test do
+  gem 'faker'
+end

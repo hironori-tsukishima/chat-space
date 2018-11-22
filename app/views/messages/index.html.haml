@@ -12,7 +12,7 @@
     - @messages.each do |message|
       .chat-main__body__message-name
         = current_user.name
-      .chat-main__body__message-time
+
         =message.created_at
       .chat-main__body__message-body
         =message.text
