@@ -12,14 +12,6 @@ class MessagesController < ApplicationController
       if @message.save
         respond_to do |format|
           format.html
-          # if @message.save
-          #   redirect_to group_messages_path(@group), notice:"チャット成功！"
-          # else
-          #   @messages = @group.messages.includes(:user)
-          #   flash.now[:alert] = "送れてないよ。画像かテキストは入れてな"
-
-          #   render :index
-          # end}
           format.json
         end
       else
