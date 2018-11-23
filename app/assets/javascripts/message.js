@@ -23,7 +23,7 @@ $(document).on('turbolinks:load', function(){
 
   $(function(){
     $(".message_js").on("submit", function(e){
-      $(".submit").attr("disabled", false);
+
       e.preventDefault();
       var formData = new FormData(this);
       console.log(formData)
@@ -45,6 +45,7 @@ $(document).on('turbolinks:load', function(){
         $('.chat-main__body').animate({
           scrollTop: $('.chat-main__body')[0].scrollHeight},
          'slow', 'swing');
+        $(".submit").prop('disabled', false)
           return false;
       })
       .fail(function(){
