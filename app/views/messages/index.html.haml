@@ -15,10 +15,14 @@
       .chat-main__body__message-time
         =message.created_at
       .chat-main__body__message-body
-        =message.text
+        - if message.text.present?
+          %p.lower-message__content
+            = message.text
+        = image_tag message.image, class: 'lower-message__image' if message.image.present?
   .chat-main__footer
     = form_for [@group, @message], html: {class: "message_js"} do |f|
       = f.text_field :text , placeholder: "type a message", class: "message"
       = f.label :image do
         = fa_icon "file-picture-o lg" , class: "icon"
+        = f.file_field :image, class: 'hidden'
       = f.submit "send" , class: "submit"
