@@ -10,15 +10,16 @@
       = current_user.name
   .chat-main__body
     - @messages.each do |message|
-      .chat-main__body__message-name
-        = current_user.name
-      .chat-main__body__message-time
-        =message.created_at
-      .chat-main__body__message-body
-        - if message.text.present?
-          %p.lower-message__content
-            = message.text
-        = image_tag message.image, class: 'lower-message__image' if message.image.present?
+      .message-box{data: {id: message.id}}
+        .chat-main__body__message-name
+          = current_user.name
+        .chat-main__body__message-time
+          =message.created_at
+        .chat-main__body__message-body
+          - if message.text.present?
+            %p.lower-message__content
+              = message.text
+          = image_tag message.image, class: 'lower-message__image' if message.image.present?
   .chat-main__footer
     = form_for [@group, @message], html: {class: "message_js"} do |f|
       = f.text_field :text , placeholder: "type a message", class: "message"
