@@ -44,11 +44,12 @@ $(document).on('turbolinks:load', function(){
         $('.chat-main__body').animate({
           scrollTop: $('.chat-main__body')[0].scrollHeight},
          'slow', 'swing');
-        $(".submit").prop('disabled', false)
-          return false;
       })
       .fail(function(){
         alert('error');
+      })
+      .always(() => {
+        $(".submit").prop('disabled', false)
       })
     })
   })
@@ -59,7 +60,6 @@ $(document).on('turbolinks:load', function(){
     if(location.pathname.match(/\/groups\/\d+\/messages/)) {
 
     var message_id = $('.message-box').last().data('id');
-                        console.log(message_id)
       $.ajax({
         url: location.href,
         type: 'GET',
@@ -83,6 +83,6 @@ $(document).on('turbolinks:load', function(){
         alert('自動更新に失敗しました');
       })
     }
-    }
+  }
 })
 
