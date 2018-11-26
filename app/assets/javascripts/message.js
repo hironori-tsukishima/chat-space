@@ -21,6 +21,10 @@ $(document).on('turbolinks:load', function(){
     return html;
   }
 
+function Scroll(){
+$('.chat-main__body').animate({
+          scrollTop: $('.chat-main__body')[0].scrollHeight},'slow', 'swing');
+}
 
   $(function(){
     $(".message_js").on("submit", function(e){
@@ -41,9 +45,7 @@ $(document).on('turbolinks:load', function(){
         var html = buildHTML(message);
         $('.chat-main__body').append(html)
         $('#message_text').val('')
-        $('.chat-main__body').animate({
-          scrollTop: $('.chat-main__body')[0].scrollHeight},
-         'slow', 'swing');
+        Scroll()
       })
       .fail(function(){
         alert('error');
@@ -59,11 +61,11 @@ $(document).on('turbolinks:load', function(){
     function updateMessage(){
     if(location.pathname.match(/\/groups\/\d+\/messages/)) {
 
-    var message_id = $('.message-box').last().data('id');
+    var message_last_id = $('.message-box:last').data('id');
       $.ajax({
         url: location.href,
         type: 'GET',
-        data: { id: message_id },
+        data: { id: message_last_id },
         dataType: 'json'
      })
 
@@ -75,8 +77,7 @@ $(document).on('turbolinks:load', function(){
         $('.chat-main__body').append(insertHTML);
         });
 
-        var mainBarContent = $('.chat-main__body')
-        mainBarContent.animate({scrollTop: $('.chat-main__body')[0].scrollHeight},'slow', 'swing');
+        Scroll()
       })
 
       .fail(function(){
