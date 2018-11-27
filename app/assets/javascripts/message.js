@@ -61,11 +61,11 @@ $('.chat-main__body').animate({
     function updateMessage(){
     if(location.pathname.match(/\/groups\/\d+\/messages/)) {
 
-    var message_last_id = $('.message-box:last').data('id');
+    var messageLastId = $('.message-box:last').data('id');
       $.ajax({
         url: location.href,
         type: 'GET',
-        data: { id: message_last_id },
+        data: { id: messageLastId },
         dataType: 'json'
      })
 
