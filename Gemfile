@@ -73,3 +73,7 @@ gem 'mini_magick'
 group :test do
 
 end
+
+group :production do
+  gem 'unicorn'
+end
