@@ -20,3 +20,5 @@ public/uploads/*
 pablic/**/*.png
 pablic/**/*.jpeg
 pablic/**/*.jpg
+
+config/secrets.yml
