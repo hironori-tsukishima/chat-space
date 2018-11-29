@@ -48,7 +48,6 @@ group :development, :test do
   gem 'capistrano-bundler'
   gem 'capistrano-rails'
   gem 'capistrano3-unicorn'
-  gem 'fog-aws'
 end
 
 group :development do
@@ -74,6 +73,7 @@ gem "devise"
 # for uploading image
 gem 'carrierwave'
 gem 'mini_magick'
+gem 'fog-aws'
 
 
 group :test do
