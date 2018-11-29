@@ -7,7 +7,8 @@
       %label.edit
         = link_to "Edit", edit_group_path(@group)
     .chat-main__header__members
-      = current_user.name
+      - @group.users.each do |user|
+        = user.name
   .chat-main__body
     - @messages.each do |message|
       .message-box{data: {id: message.id}}

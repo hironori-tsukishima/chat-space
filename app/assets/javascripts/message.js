@@ -56,7 +56,7 @@ $('.chat-main__body').animate({
     })
   })
 
-    setInterval(updateMessage, 5000);
+    setInterval(updateMessage, 50000);
 
     function updateMessage(){
     if(location.pathname.match(/\/groups\/\d+\/messages/)) {
